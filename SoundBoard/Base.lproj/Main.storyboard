@@ -86,28 +86,51 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YoF-28-6il">
                                 <rect key="frame" x="162.5" y="381" width="89" height="31"/>
                                 <color key="backgroundColor" systemColor="systemBlueColor"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="AGREGAR"/>
                                 <connections>
                                     <action selector="agregarTapped:" destination="tAv-q7-b87" eventType="touchUpInside" id="1fu-fM-6Fu"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tiempo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3oa-o7-6Z1">
+                                <rect key="frame" x="174" y="438" width="66" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tiempo Transcurrido" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KgI-Y5-kWT">
+                                <rect key="frame" x="116.5" y="500" width="181.5" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" minimumValueImage="volumen" translatesAutoresizingMaskIntoConstraints="NO" id="Voh-W9-FrD">
+                                <rect key="frame" x="99" y="612" width="216" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="ControlVolumen:" destination="tAv-q7-b87" eventType="valueChanged" id="2Qh-T0-Y0r"/>
+                                </connections>
+                            </slider>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="OXT-PL-ZJM"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Ob1-Nx-HKs" firstAttribute="centerX" secondItem="YoF-28-6il" secondAttribute="centerX" id="0DS-Ir-fvK"/>
                             <constraint firstItem="YoF-28-6il" firstAttribute="top" secondItem="Ob1-Nx-HKs" secondAttribute="bottom" constant="20" id="30o-5Q-C4U"/>
+                            <constraint firstItem="3oa-o7-6Z1" firstAttribute="centerX" secondItem="KgI-Y5-kWT" secondAttribute="centerX" id="6po-l5-bqz"/>
+                            <constraint firstItem="KgI-Y5-kWT" firstAttribute="top" secondItem="3oa-o7-6Z1" secondAttribute="bottom" constant="38" id="DBP-fp-3mZ"/>
                             <constraint firstItem="lAi-Uv-ZOG" firstAttribute="leading" secondItem="OXT-PL-ZJM" secondAttribute="leading" constant="20" id="DgF-fA-oCO"/>
                             <constraint firstItem="lAi-Uv-ZOG" firstAttribute="top" secondItem="iIV-MI-A4N" secondAttribute="bottom" constant="30" id="IIf-jW-PZ6"/>
                             <constraint firstItem="Ob1-Nx-HKs" firstAttribute="leading" secondItem="OXT-PL-ZJM" secondAttribute="leading" constant="20" id="KQa-45-PUm"/>
+                            <constraint firstItem="YoF-28-6il" firstAttribute="centerX" secondItem="3oa-o7-6Z1" secondAttribute="centerX" id="Pvv-EA-K42"/>
                             <constraint firstItem="Ob1-Nx-HKs" firstAttribute="top" secondItem="lAi-Uv-ZOG" secondAttribute="bottom" constant="20" id="Qtd-ND-k8l"/>
                             <constraint firstItem="gha-vQ-17m" firstAttribute="centerX" secondItem="c70-xv-9v4" secondAttribute="centerX" id="RgK-fB-2Xi"/>
                             <constraint firstItem="iIV-MI-A4N" firstAttribute="top" secondItem="gha-vQ-17m" secondAttribute="bottom" constant="20" id="Ulf-Dp-Nhk"/>
                             <constraint firstItem="OXT-PL-ZJM" firstAttribute="trailing" secondItem="Ob1-Nx-HKs" secondAttribute="trailing" constant="20" id="W3d-i5-Rbw"/>
                             <constraint firstItem="gha-vQ-17m" firstAttribute="top" secondItem="OXT-PL-ZJM" secondAttribute="top" constant="20" id="Z20-sz-Xf0"/>
                             <constraint firstItem="OXT-PL-ZJM" firstAttribute="trailing" secondItem="lAi-Uv-ZOG" secondAttribute="trailing" constant="20" id="eqa-kb-lo8"/>
+                            <constraint firstItem="3oa-o7-6Z1" firstAttribute="top" secondItem="YoF-28-6il" secondAttribute="bottom" constant="26" id="iHv-zz-exS"/>
                             <constraint firstItem="lAi-Uv-ZOG" firstAttribute="centerX" secondItem="Ob1-Nx-HKs" secondAttribute="centerX" id="ji0-6Q-n7t"/>
                             <constraint firstItem="iIV-MI-A4N" firstAttribute="centerX" secondItem="lAi-Uv-ZOG" secondAttribute="centerX" id="la8-9I-lQO"/>
                             <constraint firstItem="gha-vQ-17m" firstAttribute="centerX" secondItem="iIV-MI-A4N" secondAttribute="centerX" id="yH1-mv-hBh"/>
@@ -119,6 +142,8 @@
                         <outlet property="grabarButton" destination="gha-vQ-17m" id="B6G-ZK-1nH"/>
                         <outlet property="nombreTextField" destination="Ob1-Nx-HKs" id="lc6-9S-kRv"/>
                         <outlet property="reproducirButton" destination="iIV-MI-A4N" id="Utm-IO-Y0y"/>
+                        <outlet property="slider" destination="Voh-W9-FrD" id="9Ce-Lz-LKy"/>
+                        <outlet property="tiempoTranscurrido" destination="KgI-Y5-kWT" id="PXg-2B-WIv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Us-bf-o36" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -147,6 +172,7 @@
     <resources>
         <image name="grabar" width="50" height="50"/>
         <image name="reproducir" width="50" height="50"/>
+        <image name="volumen" width="50" height="50"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

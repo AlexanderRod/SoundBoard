@@ -30,7 +30,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         let grabacion = grabaciones[indexPath.row]
-        cell.textLabel?.text = grabacion.nombre
+        cell.textLabel?.text = "\(grabacion.nombre!) -"
         return cell
     }
     
@@ -39,7 +39,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         do{
             grabaciones = try context.fetch(Grabacion.fetchRequest())
             tablaGrabaciones.reloadData()
-        }catch{}
+        }
+        catch{
+            
+        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
